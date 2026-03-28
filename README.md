@@ -1,4 +1,4 @@
-# ZotMacros MVP
+# ZotMacros
 
 MyFitnessPal-style MVP for UCI Dining: pick restaurant, date, meal period, and station; view items with calories and protein; log items to a planner; see remaining calories/protein vs goals; get recommended item combos that fit remaining calories and maximize protein.
 
