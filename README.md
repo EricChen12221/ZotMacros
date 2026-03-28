@@ -21,9 +21,15 @@ Uses **AnteaterAPI** dining endpoints only (no scraping).
    ```
 
 3. **Run the app**
+   
+   ```bash
+   cd frontend
+   python3 app.py
+   ```
 
    ```bash
-   streamlit run app.py
+   cd backend
+   npm start
    ```
 
 ## Usage
