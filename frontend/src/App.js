@@ -265,13 +265,14 @@ function NutritionGoals({ goals, updateGoals }) {
           <input
             type="number"
             value={calorieGoal}
-            onChange={(e) => setCalorieGoal(Number(e.target.value))}
-            onBlur={() =>
+            onChange={(e) => {
+              const newCalorieGoal = Number(e.target.value);
+              setCalorieGoal(newCalorieGoal);
               updateGoals({
-                calorie_goal: calorieGoal,
-                protein_goal: proteinGoal
-              })
-            }
+                calorie_goal: newCalorieGoal,
+                protein_goal: proteinGoal,
+              });
+            }}
             style={styles.input}
           />
         </div>
@@ -281,13 +282,14 @@ function NutritionGoals({ goals, updateGoals }) {
           <input
             type="number"
             value={proteinGoal}
-            onChange={(e) => setProteinGoal(Number(e.target.value))}
-            onBlur={() =>
+            onChange={(e) => {
+              const newProteinGoal = Number(e.target.value);
+              setProteinGoal(newProteinGoal);
               updateGoals({
                 calorie_goal: calorieGoal,
-                protein_goal: proteinGoal
-              })
-            }
+                protein_goal: newProteinGoal,
+              });
+            }}
             style={styles.input}
           />
         </div>
