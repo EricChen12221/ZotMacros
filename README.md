@@ -29,11 +29,10 @@ Uses **AnteaterAPI** dining endpoints only (no scraping).
 ## Usage
 
 - Choose **Restaurant**: Anteatery or Brandywine.
-- Pick a **Date** (default: today).
-- Set **Calories goal** (default 2000) and **Protein goal** (default 150 g).
-- Select **Meal period** and **Station**, then **Add** dishes to your log.
-- Use **Planner** to remove items or clear the log.
-- Click **Recommend** to see up to 5 combos that fit your remaining calories and prioritize protein.
+- Select dishes from **Station**, then **Add** dishes to your log.
+- Use **Dietary Plan** to look at the log.
+- In **Dietary Plan**, set **Calories goal** (default 0) and **Protein goal** (default 0).
+- See up to 3 recommendeed items that fit your remaining calories and prioritize protein.
 
 ## API
 
