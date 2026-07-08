@@ -29,22 +29,6 @@ restaurant_today_cache = TTLCache(maxsize=200, ttl=300)
 def home():
     return "Server is running"
 
-@app.route("/calculate", methods=["POST"])
-def calculate():
-    
-    # POST logic
-    data = request.json
-    grades = data.get("grades", [])
-    if not grades:
-        return jsonify({"error": "No grades provided"}), 400
-    average = sum(grades) / len(grades)
-    if average >= 90: letter = "A"
-    elif average >= 80: letter = "B"
-    elif average >= 70: letter = "C"
-    elif average >= 60: letter = "D"
-    else: letter = "F"
-    return jsonify({"average": round(average, 2), "letter": letter})
-
 @app.route("/log_food", methods=["POST"])
 def log_food():
     data = request.json
