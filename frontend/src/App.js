@@ -3,10 +3,11 @@ import React, { useState } from "react";
 /* Dining Hall Images */
 import anteateryImg from "./anteatery.jpg";
 import brandyImg from "./brandywine.jpg"
-import { get } from "@react-native-firebase/app/dist/module/internal/web/firebaseDatabase";
+
+const baseUrl = "https://zotmacros.onrender.com"
 
 function Main() {
-  const [activeTab, setActiveTab] = useState("Anteatery");
+  const [activeTab, setActiveTab] = useState("Brandywine");
 
   const getImageForTab = () => {
     if (activeTab === "Anteatery") return anteateryImg;
@@ -157,8 +158,8 @@ function LoadDietaryPlanContent() {
 
   const refreshAll = async () => {
     const [goalsRes, recRes] = await Promise.all([
-      fetch("http://127.0.0.1:5000/goals"),
-      fetch("http://127.0.0.1:5000/recommended"),
+      fetch(`${baseUrl}/goals`),
+      fetch(`${baseUrl}/recommended`),
     ]);
 
     const goalsData = await goalsRes.json();
@@ -181,7 +182,7 @@ function LoadDietaryPlanContent() {
 
   // update goals
   const updateGoals = async (newGoals) => {
-    await fetch("http://127.0.0.1:5000/set_goals", {
+    await fetch(`${baseUrl}/set_goals`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -194,7 +195,7 @@ function LoadDietaryPlanContent() {
 
   //Remove food
   const removeFood = async (dish) => {
-    const response = await fetch("http://127.0.0.1:5000/remove_food", {
+    const response = await fetch(`${baseUrl}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ dish }),
@@ -212,7 +213,7 @@ function LoadDietaryPlanContent() {
 
   // log food
   const addFood = async (dish) => {
-    await fetch("http://127.0.0.1:5000/log_food", {
+    await fetch(`${baseUrl}/log_food`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -452,7 +453,7 @@ function GetGroups({tab}) {
   React.useEffect(() => {
     setResult(null) 
     const getGroups = async () => {
-      const response = await fetch("http://127.0.0.1:5000/stations", {
+      const response = await fetch(`${baseUrl}/stations`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -507,7 +508,7 @@ function DishRow({ dishes, addFood}) {
 
 function DishCard({ dish, addFood }) {
   const logFood = async () => {
-    await fetch("http://127.0.0.1:5000/log_food", {
+    await fetch(`${baseUrl}/log_food`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
