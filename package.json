@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@react-native-firebase/app": "^23.8.8",
-    "@react-native-firebase/messaging": "^23.8.8"
+    "@react-native-firebase/messaging": "^23.8.8",
+    "flask": "^0.2.10"
   }
 }
