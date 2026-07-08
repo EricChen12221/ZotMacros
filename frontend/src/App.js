@@ -34,7 +34,7 @@ function MixedTabs({activeTab, setActiveTab}) {
   const [dropdownOpen, setDropdownOpen] = useState(false); // dropdown open state
   const [prevActiveTab, setPrevTab] = useState("Brandywine")
 
-  const dropdownItems = ["Anteatery", "Brandywine"];
+  const dropdownItems = ["Brandywine", "Anteatery"];
 
   return (
     <div
